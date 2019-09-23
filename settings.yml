@@ -1,0 +1,5 @@
+input_file_path: ./tweet.json
+stop_words_file_path: ./stop_words
+term:
+  - 2011/04/01
+  - 2019/3/31

@@ -1,0 +1,3 @@
+*.json
+stop_words
+output/*
