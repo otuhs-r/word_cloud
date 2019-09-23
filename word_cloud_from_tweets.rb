@@ -31,8 +31,7 @@ tweets.each do |tweet|
   end
 end
 
-# 出現回数上位 100 個を抽出
-
+# カウントしない単語を除外した上で、出現回数上位 100 個を抽出
 stop_words = []
 File.open(settings["stop_words_file_path"], mode = "rt") { |f| stop_words = f.readlines.map{ |w| w.chomp } }
 top_words = words.to_a.reject { |(w, c)| w.match?(/^[a-zA-Z\d]+|^ｗ+$/) || stop_words.include?(w) || emoji_contained?(w) }.sort { |(_k1, v1), (_k2, v2)| v2 <=> v1 }[0..100]
